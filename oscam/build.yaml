@@ -1,4 +1,4 @@
 ---
 build_from:
-  aarch64: lscr.io/linuxserver/oscam:latest
-  amd64: lscr.io/linuxserver/oscam:latest
+  aarch64: ghcr.io/r3n3l33/oscam:latest
+  amd64: ghcr.io/r3n3l33/oscam:latest
