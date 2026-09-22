@@ -1,41 +1,35 @@
-# Home Assistant Add-on: JDownloader 2
+Hier ist der angepasste und ins Deutsche übersetzte Text für deine README.md auf GitHub. Er wurde genau auf unsere Änderungen (Ingress, VNC und die entfernte YAML-Konfiguration) zugeschnitten:
+Home Assistant Add-on: JDownloader 2 (mit VNC & Ingress)
 
-JDownloader is a free, open-source download management tool with a huge community of developers that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwith limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!
+JDownloader ist ein kostenloses, quelloffenes Download-Management-Tool mit einer riesigen Entwickler-Community, das das Herunterladen so einfach und schnell macht, wie es sein sollte. Nutzer können Downloads starten, stoppen oder pausieren, Bandbreitenbeschränkungen festlegen, Archive automatisch entpacken und vieles mehr. Es ist ein leicht erweiterbares Framework, das dir jeden Tag Stunden deiner wertvollen Zeit sparen kann!
 
-## Installation
+Besonderheit dieser Version: Dieser Fork bietet eine vollständige grafische Benutzeroberfläche direkt in der Home Assistant Seitenleiste (via Ingress / noVNC) und ermöglicht direkten Zugriff auf deine lokalen Netzwerk- und Speicherpfade (/media und /share).
+Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+Da es sich um ein benutzerdefiniertes Add-on handelt, erfolgt die Installation über dein eigenes Home Assistant Repository:
 
-1. Search for the "JDownloader 2" add-on in the Supervisor add-on store and
-   install it.
-1. Check the Configuration
-1. Start the "JDownloader 2" add-on.
-1. Check the logs of the "JDownloader 2" to see if everything went well.
-1. Ready to go!
+    Navigiere in Home Assistant zu Einstellungen → Add-ons → Add-on Store.
 
-## Configuration
+    Klicke oben rechts auf das Menü (drei Punkte) und wähle Repositories.
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+    Füge die URL deines GitHub-Repositories hinzu und klicke auf Hinzufügen.
 
-Example add-on configuration:
+    Schließe das Fenster und klicke im Menü (drei Punkte) auf Neu laden.
 
-```yaml
-email: home@assistant.de
-password: fancy
-device_name: JD2 by HomeAssistant
-```
+    Suche im Add-on Store nach dem Add-on "JDownloader 2 (VNC)" und klicke auf Installieren.
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+    Aktiviere den Schalter In der Seitenleiste anzeigen, um JDownloader später bequem über das Menü aufzurufen.
 
-### Option: `email`
+    Starte das Add-on und prüfe den Reiter Protokolle (Logs), um sicherzustellen, dass der Startvorgang erfolgreich war.
 
-The MyJDownloader account e-mail. Is written automatically to config-file.
+Konfiguration & Nutzung
 
-### Option: `password`
+Da dieses Add-on eine vollwertige grafische Oberfläche bietet, ist keine umständliche Einrichtung über YAML-Konfigurationsfelder in Home Assistant nötig.
 
-The MyJDownloader account password. Is written automatically to config-file.
+    Benutzeroberfläche öffnen: Klicke in der Seitenleiste deines Home Assistant auf JDownloader. Du erhältst direkten Zugriff auf das vollständige Desktop-Interface.
 
-### Option: `device_name`
+    MyJDownloader-Konto (Optional): Möchtest du JDownloader weiterhin über die MyJDownloader-App oder Browser-Erweiterung steuern, trage deine Zugangsdaten (E-Mail und Passwort) einfach direkt in der grafischen JDownloader-Oberfläche unter Einstellungen → MyJDownloader ein.
 
-The device name that will appear on MyJdownloader portal
+    Download-Pfade: Der interne Download-Ordner des Containers ist automatisch mit dem /media-Ordner deines Home Assistant Systems verknüpft. Wenn du in JDownloader etwas herunterlädst, landet es sicher auf deinem Samba-NAS-Speicher.
+
+Füge diesen Text einfach in die README.md deines JDownloader-Ordners auf GitHub ein, dann sieht die Dokumentation im Home Assistant Add-on Store sofort professionell und aktuell aus.
