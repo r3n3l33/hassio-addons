@@ -3,5 +3,5 @@ FROM ${BUILD_FROM}
 
 ENV LANG=C.UTF-8
 
-# Startbefehl mit Ingress-Unterstützung
+# Startet Tvheadend mit aktivierter HTTP-Root-Anpassung
 CMD [ "tvheadend", "-C", "-u", "root", "-g", "root", "--http_root", "" ]
