@@ -13,3 +13,5 @@ ports:
   9982/tcp: 9982
 devices:
   - "/dev/dvb:/dev/dvb:rwm"
+map:
+  - addon_config:rw
