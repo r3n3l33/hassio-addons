@@ -1,50 +1,32 @@
----
-name: TVHeadend
-version: 1.5-3
-stage: experimental
-slug: tvheadend
-description: TV streaming server and recorder.
-url: "https://github.com/GauthamVarmaK/addon-tvheadend"
-init: false
+name: "Tvheadend"
+version: "4.3"
+slug: "tvheadend"
+description: "TVheadend Server mit Icam-Ingress-Unterstützung für Home Assistant OS"
 arch:
   - aarch64
   - amd64
-  - armhf
   - armv7
-  - i386
-webui: "http://[HOST]:[PORT:9981]/"
-hassio_role: admin
-hassio_api: true
-host_network: true
-privileged:
-  - NET_ADMIN
-  - SYS_ADMIN
-  - SYS_RAWIO
-devices:
-  - /dev/dvb
-  - /dev/dri
+startup: application
+boot: auto
+
+# Ingress & UI Einstellungen (Standard HTTP-Port von Tvheadend)
+ingress: true
+ingress_port: 9981
+panel_title: "Tvheadend"
+panel_icon: "mdi:television-guide"
+
+# Port-Freigabe für DVB-Streams / HTSP
 ports:
   9981/tcp: 9981
   9982/tcp: 9982
 ports_description:
-  9981/tcp: TVH Web Interface
-  9982/tcp: TVH HTSP
+  9981/tcp: "Web Interface & HTTP-Stream (Direktzugriff)"
+  9982/tcp: "HTSP Server Port (Kodi / TV-Clients)"
+
+# Ordner-Mappings für HAOS
 map:
-  - "config:rw"
-  - "media:rw"
-options:
-  system_packages: []
-  init_commands: []
-  webgrabplus: false
-  picons: false
-  snp_url: ""
-  srp_url: ""
-schema:
-  system_packages:
-    - str
-  init_commands:
-    - str
-  webgrabplus: bool
-  picons: bool
-  snp_url: str
-  srp_url: str
+  - addon_config:rw
+  - media:rw
+  - share:rw
+
+hassio_role: default
