@@ -22,7 +22,7 @@
   },
   "map": [
     "addon_config:rw",
-    "media:rw:output",
+    "media:rw",
     "share:rw"
   ],
   "hassio_role": "default"
