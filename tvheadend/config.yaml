@@ -1,31 +1,11 @@
-name: "Tvheadend"
-version: "4.3"
-slug: "tvheadend"
-description: "TVheadend Server mit Icam-Ingress-Unterstützung für Home Assistant OS"
+name: "Tvheadend (Custom)"
+version: "1.0.0"
+slug: "tvheadend_custom"
+description: "Mein eigenes Tvheadend Build"
 arch:
   - aarch64
   - amd64
-startup: application
-boot: auto
-
-# Ingress & UI Einstellungen (Standard HTTP-Port von Tvheadend)
-ingress: true
-ingress_port: 9981
-panel_title: "Tvheadend"
-panel_icon: "mdi:television-guide"
-
-# Port-Freigabe für DVB-Streams / HTSP
-ports:
-  9981/tcp: 9981
-  9982/tcp: 9982
-ports_description:
-  9981/tcp: "Web Interface & HTTP-Stream (Direktzugriff)"
-  9982/tcp: "HTSP Server Port (Kodi / TV-Clients)"
-
-# Ordner-Mappings für HAOS
-map:
-  - addon_config:rw
-  - media:rw
-  - share:rw
-
-hassio_role: default
+init: false
+host_network: true
+devices:
+  - "/dev/dvb:/dev/dvb:rwm"
