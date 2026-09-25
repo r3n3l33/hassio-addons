@@ -9,5 +9,11 @@ init: false
 host_network: true
 ingress: true
 ingress_port: 9981
+ports:
+  9981/tcp: 9981
+  9982/tcp: 9982
+ports_description:
+  9981/tcp: "Web Interface"
+  9982/tcp: "HTSP Stream Port"
 devices:
   - "/dev/dvb:/dev/dvb:rwm"
