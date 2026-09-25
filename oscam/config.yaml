@@ -1,5 +1,5 @@
 name: OSCAM
-version: 1.1
+version: 1.1337
 slug: oscam
 description: This add-on allows you to have a OSCAM-Server.
 arch:
@@ -7,16 +7,24 @@ arch:
   - aarch64
   - amd64
 startup: application
-webui: 'http://[HOST]:[PORT:8888]'
 boot: auto
 init: false
 uart: true
+
+# Ingress-Konfiguration
+ingress: true
+ingress_port: 8888
+panel_icon: mdi:satellite-variant
+panel_title: OSCam
+
+# Externe Ports
 ports:
   8888/tcp: 8888
   9999/tcp: 9999
 ports_description:
-  8888/tcp: Web Interface
-  9999/tcp: OSCAM Server
+  8888/tcp: Web Interface (Direktzugriff)
+  9999/tcp: OSCAM Server (DVBAPI / CCcam / Camd)
+
 map:
-  - 'config:rw'
+  - addon_config:rw
 hassio_role: default
